@@ -28,7 +28,7 @@
         </div>
         <div class=" card-body">
           <div class="chart-area">
-            <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions_time">
+            <highcharts-chart class="center" [Highcharts]="highcharts" [options]="chartOptions_time">
             </highcharts-chart>
           </div>
         </div>
@@ -44,7 +44,7 @@
         </div>
         <div class=" card-body">
           <div class="chart-area">
-            <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions">
+            <highcharts-chart class="center" [Highcharts]="highcharts" [options]="chartOptions">
             </highcharts-chart>
           </div>
         </div>
@@ -52,22 +52,18 @@
     </div>
   </div>
   <div class=" row">
-    <div class=" col-lg-6 col-md-12">
+    <div class=" col-lg-6">
       <div class=" card">
         <div class=" card-header">
-          <div class=" row">
-            <div class=" col-sm-6 text-left">
-              <h5 class=" card-category">Risk factors with higher prevalence in the population</h5>
-              <h2 class=" card-title">
-                <i class=" tim-icons icon-molecule-40 text-info"> </i>TOP 3
-              </h2>
-            </div>
-            <div class=" card-body">
-              <div class="chart-area">
-                <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions_risk">
-                </highcharts-chart>
-              </div>
-            </div>
+          <h5 class=" card-category">Risk factors with higher prevalence in the population</h5>
+          <h2 class=" card-title">
+            <i class=" tim-icons icon-molecule-40 text-info"> </i>TOP 3
+          </h2>
+        </div>
+        <div class=" card-body">
+          <div class="chart-area">
+            <highcharts-chart class="center" [Highcharts]="highcharts" [options]="chartOptions_risk">
+            </highcharts-chart>
           </div>
         </div>
       </div>
