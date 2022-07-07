@@ -9,6 +9,20 @@ import { ConnectBackService } from '../../services/connect-back.service';
 })
 export class GeneralReportComponent implements OnInit {
 
+  citesList:any=[];
+  constructor(private serviceBack:ConnectBackService) { }
+
+  ngOnInit(): void {
+    //response in citeList
+    this.serviceBack.getCites()
+    .subscribe(data=>this.citesList=data);
+
+    console.log(this.citesList);
+
+    this.serviceBack.getCites().subscribe(response =>  console.log(response[1].hipertensos));
+
+  }
+
   highcharts = Highcharts;
   chartOptions = {
     chart : {
@@ -33,7 +47,7 @@ export class GeneralReportComponent implements OnInit {
     series : [{
         type: 'pie',
         data: [
-          ['Medellin',   70],
+          ['Medellin', 80],
           ['Bucamaranga',       20],
           ['Bogota',      130]
         ]
@@ -100,9 +114,4 @@ export class GeneralReportComponent implements OnInit {
           }
       ]
     };
-  constructor(private serviceBack:ConnectBackService) { }
-
-  ngOnInit(): void {
-    this.serviceBack.getCites().subscribe(response =>  console.log(response));
-  }
   }

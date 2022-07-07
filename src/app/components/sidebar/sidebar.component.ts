@@ -24,6 +24,12 @@ export const ROUTES: RouteInfo[] = [
     title: "Team 6",
     icon: "icon-trophy",
     class: ""
+  },
+  {
+    path: "/model",
+    title: "Model",
+    icon: "icon-graph",
+    class: ""
   }
 ];
 

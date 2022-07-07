@@ -51,4 +51,4 @@ jobs:
         with:
           app-name: 'ds4a-team6-correlationone'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C099286DCA14FCBACD87D879D0A4EBB }}
-          package: ./dist/ds4a-team6-correlationone
+          package: ./dist/
