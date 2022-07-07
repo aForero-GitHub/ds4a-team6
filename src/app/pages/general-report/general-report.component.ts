@@ -9,18 +9,15 @@ import { ConnectBackService } from '../../services/connect-back.service';
 })
 export class GeneralReportComponent implements OnInit {
 
-  citesList:any=[];
+  citesList = [];
+
   constructor(private serviceBack:ConnectBackService) { }
 
-  ngOnInit(): void {
-    //response in citeList
-    this.serviceBack.getCites()
-    .subscribe(data=>this.citesList=data);
-
-    console.log(this.citesList);
-
-    this.serviceBack.getCites().subscribe(response =>  console.log(response[1].hipertensos));
-
+  ngOnInit(){
+    this.serviceBack.getCites().subscribe((responce:[])=>{
+      this.citesList=responce;
+      console.log(this.citesList);
+    })
   }
 
   highcharts = Highcharts;
@@ -63,13 +60,13 @@ export class GeneralReportComponent implements OnInit {
           text: null
       },
       xAxis:{
-          categories: ['Cholesterol','Glucose','IMC'],
+          categories: ['IMC','Glucosa','Edad','Colesterol'],
           crosshair: true
       },
       yAxis : {
           className: 'high_color',
           title: {
-            text: '# patients diagnosed'
+            text: '% importance'
           }
       },
       plotOptions : {
@@ -80,8 +77,8 @@ export class GeneralReportComponent implements OnInit {
       },
       colors: ['#d550d7', '#f2b4e9', '#bb53f4'],
       series: [{
-          name: 'TOP 3 Risk Factors',
-          data: [109.9, 71.5, 106.4]
+          name: 'Variables Used',
+          data: [100,25.33, 96.78, 80.03]
       }]
     };
 
