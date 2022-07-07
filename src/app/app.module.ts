@@ -16,6 +16,7 @@ import { NewPredictionComponent } from './pages/new-prediction/new-prediction.co
 import { GeneralReportComponent } from './pages/general-report/general-report.component';
 import { ChartsModule } from 'ng2-charts';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { ModelComponent } from './pages/model/model.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     AppRoutingModule,
     ToastrModule.forRoot(),
   ],
-  declarations: [AppComponent, AdminLayoutComponent, NewPredictionComponent, GeneralReportComponent],
+  declarations: [AppComponent, AdminLayoutComponent, NewPredictionComponent, GeneralReportComponent, ModelComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
