@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/96bb3e67-c9ec-40a0-acea-8475dbc6af91/microsoft.web/sites/subscriptions/96bb3e67-c9ec-40a0-acea-8475dbc6af91/resourceGroups/ds4a-prod/providers/Microsoft.Web/sites/team6-ds4a-cohort6",
+    "appService.deploySubpath": "dist"
+}
