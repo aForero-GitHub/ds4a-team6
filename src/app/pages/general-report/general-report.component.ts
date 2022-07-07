@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { ConnectBackService } from '../../services/connect-back.service';
 
 @Component({
   selector: 'app-general-report',
@@ -99,9 +100,9 @@ export class GeneralReportComponent implements OnInit {
           }
       ]
     };
-  constructor() { }
+  constructor(private serviceBack:ConnectBackService) { }
 
   ngOnInit(): void {
+    this.serviceBack.getCites().subscribe(response =>  console.log(response));
   }
-
-}
+  }
