@@ -23,7 +23,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install
+          npm install --force
           npm run build --prod
 
       - name: Upload artifact for deployment job
@@ -50,6 +50,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'ds4a-team6-correlationone'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C099286DCA14FCBACD87D879D0A4EBB }}
-          package: .
+          package: ./dist/ds4a-team6-correlationone
