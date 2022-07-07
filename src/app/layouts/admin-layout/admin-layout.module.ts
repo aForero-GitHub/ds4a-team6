@@ -6,9 +6,6 @@ import { FormsModule } from "@angular/forms";
 
 import { AdminLayoutRoutes } from "./admin-layout.routing";
 import { TypographyComponent } from "../../pages/typography/typography.component";
-import { ModelComponent } from "src/app/pages/model/model.component";
-import { NewPredictionComponent } from "../../pages/new-prediction/new-prediction.component";
-import { GeneralReportComponent } from "../../pages/general-report/general-report.component";
 
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
@@ -23,9 +20,6 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
   ],
   declarations: [
     TypographyComponent,
-    ModelComponent,
-    NewPredictionComponent,
-    GeneralReportComponent
   ]
 })
 export class AdminLayoutModule {}
