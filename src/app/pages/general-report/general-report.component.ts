@@ -44,9 +44,9 @@ export class GeneralReportComponent implements OnInit {
     series : [{
         type: 'pie',
         data: [
-          ['Medellin', 80],
-          ['Bucamaranga',       20],
-          ['Bogota',      130]
+          ['MEDELLIN', 4373],
+          ['CALI',4939],
+          ['PALMIRA',2271]
         ]
     }]
   };
@@ -91,8 +91,7 @@ export class GeneralReportComponent implements OnInit {
           text: null
       },
       xAxis:{
-          categories:["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+          categories:[9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,83,85,87,89,91,93,95,97,99,101]
       },
       yAxis: {
           title:{
@@ -102,12 +101,8 @@ export class GeneralReportComponent implements OnInit {
       colors: ['#d550d7', '#f2b4e9'],
       series: [
           {
-            name: 'F',
-            data: [17100,7300, 7400, 7900, 13400, 13900, 16600,19900, 41800, 38100, 37500, 36000]
-          },
-          {
-            name: 'M',
-            data: [12300,5200, 4650, 5100, 8200, 9200, 11300,10700, 12000, 26650, 27980, 28500]
+            name: 'Pacientes',
+            data: [9,11,13,15,17,19,21,23,25,80,85,99,105,120,150,170,210,320,350,360,430,460,500,550,580,630,680,700,790,900,850,820,800,700,680,640,600,620,530,480,200,151,100,95,80,20,3]
           }
       ]
     };
