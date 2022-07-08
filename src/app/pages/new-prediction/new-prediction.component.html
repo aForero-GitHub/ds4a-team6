@@ -7,19 +7,19 @@
         </div>
         <!--center div -->
         <div class="card-body formulario">
-          <form>
+          <form #frmAddCo='ngForm' [formGroup]="form" (ngSubmit)="generateDiagnostic()">
             <div class=" row">
               <div class=" col-md-4 pr-md-1">
                 <div class=" form-group">
                   <label> Name </label>
-                  <input #name class=" form-control" maxlength="15" placeholder="Andrew" type="text"
-                    [(ngModel)]="names" />
+                  <input matInput #name class=" form-control" maxlength="15" placeholder="Andrew" type="text"
+                    formControlName="nombre" />
                 </div>
               </div>
               <div class=" col-md-4 pr-md-1">
                 <div class=" form-group">
                   <label> Age</label>
-                  <input class=" form-control" type="number" placeholder="38" />
+                  <input matInput #age class=" form-control" type="number" placeholder="38" formControlName="edad" />
                 </div>
               </div>
             </div>
@@ -27,13 +27,14 @@
               <div class=" col-md-4 pr-md-1">
                 <div class=" form-group">
                   <label> IMC </label>
-                  <input class=" form-control" placeholder="9.80" type="text" />
+                  <input matInput #imc class=" form-control" placeholder="9.80" type="text" formControlName="imc" />
                 </div>
               </div>
               <div class=" col-md-4 pr-md-1">
                 <div class=" form-group">
                   <label> Glucose </label>
-                  <input class=" form-control" placeholder="5.96" type="text" />
+                  <input matInput #glucose class=" form-control" placeholder="5.96" type="text"
+                    formControlName="glucosa" />
                 </div>
               </div>
             </div>
@@ -41,20 +42,22 @@
               <div class="col-md-4 pr-md-1">
                 <div class=" form-group">
                   <label> Gender </label>
-                  <input class=" form-control" placeholder="Female" type="text" />
+                  <input matInput #genter class=" form-control" placeholder="M or F" type="text"
+                    formControlName="genero" />
                 </div>
               </div>
               <div class="col-md-4 pr-md-1">
                 <div class=" form-group">
                   <label> Cholesterol </label>
-                  <input class=" form-control" placeholder="9.76" type="text" />
+                  <input matInput #cholesterol class=" form-control" placeholder="9.76" type="text"
+                    formControlName="colesterol" />
                 </div>
               </div>
             </div>
+            <div class=" card-footer">
+              <button class=" btn btn-fill btn-primary" type="submit">Generate Prediction</button>
+            </div>
           </form>
-        </div>
-        <div class=" card-footer">
-          <button class=" btn btn-fill btn-primary" type="submit">Generate Prediction</button>
         </div>
       </div>
     </div>
