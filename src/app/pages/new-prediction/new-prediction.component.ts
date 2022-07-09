@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ConnectBackService } from '../../services/connect-back.service';
+import { Diagnostic } from 'src/app/models/diagnotic';
 
 @Component({
   selector: 'app-new-prediction',
@@ -9,8 +11,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class NewPredictionComponent implements OnInit {
 
-  risk_diagnostic : string = "MEDIUM";
-  certainty : number = 90;
+  risk_diagnostic : string = "--";
+  certainty : number = 0;
   name: string ;
   form: FormGroup;
 
@@ -50,9 +52,9 @@ export class NewPredictionComponent implements OnInit {
       }]
     };
 
-  constructor() { }
+  constructor(private serviceBack:ConnectBackService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.initForm();
   }
 
@@ -67,8 +69,35 @@ export class NewPredictionComponent implements OnInit {
     });
   }
   generateDiagnostic(){
-    this.name = this.form.value['nombre'];
-      console.log(this.name);
+    let predict = new Diagnostic();
+    predict.Genero = this.form.value['genero'];
+    predict.Edad = this.form.value['edad'];
+    predict.IMC = this.form.value['imc'];
+    predict.Glucosa = this.form.value['glucosa'];
+    predict.Colesterol = this.form.value['colesterol'];
+
+    this.serviceBack.getDiagnistics(predict).subscribe((responce)=>{
+      this.certainty=Number((responce[0][1]*100).toFixed(2));
+      if (this.certainty>=81 && this.certainty<=100){
+
+        this.risk_diagnostic="VERY HIGH";
+
+      }else if (this.certainty>=61 && this.certainty<=80){
+
+        this.risk_diagnostic="HIGH";
+      }
+      else if (this.certainty>=41 && this.certainty<=60){
+
+        this.risk_diagnostic="MEDIUM";
+
+      }
+      else if (this.certainty>=0 && this.certainty<=40){
+        this.risk_diagnostic="LOW";
+      }
+      else{
+        this.risk_diagnostic="UNKNOWN";
+      }
+    })
   }
 
 }
