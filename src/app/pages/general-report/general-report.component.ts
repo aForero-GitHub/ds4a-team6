@@ -95,7 +95,7 @@ export class GeneralReportComponent implements OnInit {
       },
       yAxis: {
           title:{
-            text:"# patients by gender"
+            text:"# patients by age"
           }
       },
       colors: ['#d550d7', '#f2b4e9'],
